@@ -67,7 +67,7 @@ server.interceptors.response.use(
 function replaceUrl(url, params) {
     let paramsArr = url.split('/');
     paramsArr = paramsArr.map(item => {
-        if(item.indexOf('[') != -1) {
+        if(item.indexOf('{') !== -1) {
             item = item.slice(1, item.length -1);
             if(typeof params[item] == 'undefined' || params[item] === null) {
                 console.warn(`${item}没有传值`)
